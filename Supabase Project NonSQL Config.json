@@ -1,0 +1,60 @@
+
+{
+  "auth": {
+    "external_providers": ["google", "github", "apple"],
+    "jwt_expiry": 3600,
+    "disable_signup": false,
+    "email_templates": {
+      "confirm_email": true,
+      "reset_password": true,
+      "magic_link": true
+    },
+    "redirect_urls": {
+      "site_url": "https://your-app.com",
+      "email_redirect_to": "https://your-app.com/welcome"
+    }
+  },
+  "realtime": {
+    "enabled": true,
+    "broadcast": true,
+    "presence": true,
+    "postgres_changes": [
+      {
+        "schema": "public",
+        "table": "*",
+        "event": ["INSERT", "UPDATE", "DELETE"]
+      }
+    ]
+  },
+  "storage": {
+    "upload_file_size_limit_mb": 50,
+    "mimetype_whitelist": ["image/png", "image/jpeg", "application/pdf"]
+  },
+  "edge_functions": {
+    "deployed_functions": [
+      {
+        "name": "hello-world",
+        "url": "/functions/v1/hello-world",
+        "timeout": 10,
+        "rate_limit": 5
+      }
+    ]
+  },
+  "webhooks": {
+    "on_user_signup": "https://your-app.com/hooks/new-user",
+    "on_password_reset": "https://your-app.com/hooks/password-reset"
+  },
+  "rate_limits": {
+    "authenticated": {
+      "requests_per_minute": 1000
+    },
+    "anonymous": {
+      "requests_per_minute": 60
+    }
+  },
+  "project": {
+    "name": "my_supabase_project",
+    "region": "us-east-1",
+    "created_at": "2023-01-01T00:00:00Z"
+  }
+}

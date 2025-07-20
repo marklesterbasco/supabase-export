@@ -75,8 +75,3 @@ supabase functions deploy hello-world
 - [pg_dump + pg_restore](https://www.postgresql.org/docs/current/app-pgdump.html)
 - `supabase functions deploy`
 - [Supabase Admin API Docs](https://supabase.com/docs/reference/api)
-
----
-**Last updated:** {{timestamp}}
-
-Maintained by the Supabase Project Export Kit ✨
